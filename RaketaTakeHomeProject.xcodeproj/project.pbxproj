@@ -11,7 +11,7 @@
 		FFAFC7DB2494DB360098AEBD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC7DA2494DB360098AEBD /* SceneDelegate.swift */; };
 		FFAFC7DD2494DB360098AEBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC7DC2494DB360098AEBD /* ViewController.swift */; };
 		FFAFC7E02494DB360098AEBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAFC7DE2494DB360098AEBD /* Main.storyboard */; };
-		FFAFC7E22494DB370098AEBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAFC7E12494DB370098AEBD /* Assets.xcassets */; };
+		FFAFC7E22494DB370098AEBD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAFC7E12494DB370098AEBD /* Images.xcassets */; };
 		FFAFC7E52494DB370098AEBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAFC7E32494DB370098AEBD /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -21,9 +21,9 @@
 		FFAFC7DA2494DB360098AEBD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FFAFC7DC2494DB360098AEBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FFAFC7DF2494DB360098AEBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FFAFC7E12494DB370098AEBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FFAFC7E12494DB370098AEBD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FFAFC7E42494DB370098AEBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		FFAFC7E62494DB370098AEBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFAFC7E62494DB370098AEBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "RaketaTakeHomeProject/Supporting files/Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +40,8 @@
 		FFAFC7CC2494DB360098AEBD = {
 			isa = PBXGroup;
 			children = (
+				FFAFC7EC2494DC130098AEBD /* Constants */,
+				FFAFC7ED2494DC1F0098AEBD /* Resources */,
 				FFAFC7D72494DB360098AEBD /* RaketaTakeHomeProject */,
 				FFAFC7D62494DB360098AEBD /* Products */,
 			);
@@ -58,13 +60,67 @@
 			children = (
 				FFAFC7D82494DB360098AEBD /* AppDelegate.swift */,
 				FFAFC7DA2494DB360098AEBD /* SceneDelegate.swift */,
-				FFAFC7DC2494DB360098AEBD /* ViewController.swift */,
-				FFAFC7DE2494DB360098AEBD /* Main.storyboard */,
-				FFAFC7E12494DB370098AEBD /* Assets.xcassets */,
 				FFAFC7E32494DB370098AEBD /* LaunchScreen.storyboard */,
-				FFAFC7E62494DB370098AEBD /* Info.plist */,
+				FFAFC7F02494DC3A0098AEBD /* Network */,
+				FFAFC7EF2494DC340098AEBD /* App */,
+				FFAFC7F12494DC400098AEBD /* Helpers */,
+				FFAFC7F22494DC5A0098AEBD /* Supporting files */,
 			);
 			path = RaketaTakeHomeProject;
+			sourceTree = "<group>";
+		};
+		FFAFC7EC2494DC130098AEBD /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		FFAFC7ED2494DC1F0098AEBD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FFAFC7EE2494DC270098AEBD /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FFAFC7EE2494DC270098AEBD /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FFAFC7E12494DB370098AEBD /* Images.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		FFAFC7EF2494DC340098AEBD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FFAFC7DC2494DB360098AEBD /* ViewController.swift */,
+				FFAFC7DE2494DB360098AEBD /* Main.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FFAFC7F02494DC3A0098AEBD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FFAFC7F12494DC400098AEBD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FFAFC7F22494DC5A0098AEBD /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				FFAFC7E62494DB370098AEBD /* Info.plist */,
+			);
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFAFC7E52494DB370098AEBD /* LaunchScreen.storyboard in Resources */,
-				FFAFC7E22494DB370098AEBD /* Assets.xcassets in Resources */,
+				FFAFC7E22494DB370098AEBD /* Images.xcassets in Resources */,
 				FFAFC7E02494DB360098AEBD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,7 +342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HJ5AVFBKU5;
-				INFOPLIST_FILE = RaketaTakeHomeProject/Info.plist;
+				INFOPLIST_FILE = "RaketaTakeHomeProject/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +360,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HJ5AVFBKU5;
-				INFOPLIST_FILE = RaketaTakeHomeProject/Info.plist;
+				INFOPLIST_FILE = "RaketaTakeHomeProject/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
