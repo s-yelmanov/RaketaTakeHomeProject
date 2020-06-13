@@ -17,6 +17,9 @@
 		FFAFC7FC2494DFB00098AEBD /* TopListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC7FB2494DFB00098AEBD /* TopListCoordinator.swift */; };
 		FFAFC7FF2494DFCF0098AEBD /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC7FE2494DFCF0098AEBD /* AppCoordinator.swift */; };
 		FFAFC8022494E1060098AEBD /* UIStoryboard+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC8012494E1060098AEBD /* UIStoryboard+Ext.swift */; };
+		FFAFC806249511310098AEBD /* TopListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC804249511310098AEBD /* TopListTableViewCell.swift */; };
+		FFAFC807249511310098AEBD /* TopListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFAFC805249511310098AEBD /* TopListTableViewCell.xib */; };
+		FFAFC809249511710098AEBD /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC808249511710098AEBD /* Reusable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		FFAFC7FB2494DFB00098AEBD /* TopListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListCoordinator.swift; sourceTree = "<group>"; };
 		FFAFC7FE2494DFCF0098AEBD /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		FFAFC8012494E1060098AEBD /* UIStoryboard+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Ext.swift"; sourceTree = "<group>"; };
+		FFAFC804249511310098AEBD /* TopListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListTableViewCell.swift; sourceTree = "<group>"; };
+		FFAFC805249511310098AEBD /* TopListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopListTableViewCell.xib; sourceTree = "<group>"; };
+		FFAFC808249511710098AEBD /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +153,7 @@
 			children = (
 				FFAFC7F92494DF9B0098AEBD /* TopListViewModel.swift */,
 				FFAFC7F62494DEF50098AEBD /* TopListViewController.swift */,
+				FFAFC803249511170098AEBD /* Cell */,
 			);
 			path = TopListViewController;
 			sourceTree = "<group>";
@@ -154,9 +161,19 @@
 		FFAFC8002494E0EF0098AEBD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FFAFC808249511710098AEBD /* Reusable.swift */,
 				FFAFC8012494E1060098AEBD /* UIStoryboard+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FFAFC803249511170098AEBD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FFAFC804249511310098AEBD /* TopListTableViewCell.swift */,
+				FFAFC805249511310098AEBD /* TopListTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +237,7 @@
 				FFAFC7E52494DB370098AEBD /* LaunchScreen.storyboard in Resources */,
 				FFAFC7F52494DED60098AEBD /* TopList.storyboard in Resources */,
 				FFAFC7E22494DB370098AEBD /* Images.xcassets in Resources */,
+				FFAFC807249511310098AEBD /* TopListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,10 +251,12 @@
 				FFAFC7FF2494DFCF0098AEBD /* AppCoordinator.swift in Sources */,
 				FFAFC7FA2494DF9B0098AEBD /* TopListViewModel.swift in Sources */,
 				FFAFC7F72494DEF50098AEBD /* TopListViewController.swift in Sources */,
+				FFAFC809249511710098AEBD /* Reusable.swift in Sources */,
 				FFAFC8022494E1060098AEBD /* UIStoryboard+Ext.swift in Sources */,
 				FFAFC7D92494DB360098AEBD /* AppDelegate.swift in Sources */,
 				FFAFC7DB2494DB360098AEBD /* SceneDelegate.swift in Sources */,
 				FFAFC7FC2494DFB00098AEBD /* TopListCoordinator.swift in Sources */,
+				FFAFC806249511310098AEBD /* TopListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
