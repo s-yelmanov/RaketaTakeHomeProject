@@ -9,5 +9,35 @@
 import UIKit
 
 final class TopListTableViewCell: UITableViewCell {
+
+    // MARK: - IBOutlets
+
+    @IBOutlet private weak var thumbnailImageView: UIImageView!
+    @IBOutlet private weak var authorNameLabel: UILabel!
+    @IBOutlet private weak var timeLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var numberOfCommentsLabel: UILabel!
+
+    // MARK: - Life cycle
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        thumbnailImageView.layer.cornerRadius = thumbnailImageView.frame.height / 2
+        thumbnailImageView.layer.masksToBounds = true
+    }
+
+    override func prepareForReuse() {
+        thumbnailImageView.image = nil
+    }
+
+    // MARK: - Setup
     
+    func setup(item: RedditTopItemResponse) {
+        thumbnailImageView.loadImage(fromURL: item.thumbnail)
+        authorNameLabel.text = item.author
+        timeLabel.text = item.timeString
+        titleLabel.text = item.title
+        numberOfCommentsLabel.text = "\(item.numberOfComments)"
+    }
+
 }

@@ -19,14 +19,14 @@
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vS1-5C-9Ma">
                         <rect key="frame" x="16" y="18" width="133" height="48"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ia1-tW-SuH">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hMb-NA-YP9">
                                 <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="ia1-tW-SuH" secondAttribute="height" multiplier="1:1" id="7HH-6y-9Sh"/>
-                                    <constraint firstAttribute="height" constant="48" id="wjc-P4-fMZ"/>
+                                    <constraint firstAttribute="width" secondItem="hMb-NA-YP9" secondAttribute="height" id="PUR-Wp-UQu"/>
+                                    <constraint firstAttribute="width" constant="48" id="fTn-R0-5kt"/>
                                 </constraints>
-                            </view>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="f4q-em-S3L">
                                 <rect key="frame" x="56" y="0.0" width="77" height="48"/>
                                 <subviews>
@@ -90,6 +90,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="authorNameLabel" destination="Ese-9b-KeO" id="fZl-f7-ndK"/>
+                <outlet property="numberOfCommentsLabel" destination="hEL-gh-242" id="wjP-Yk-7Zj"/>
+                <outlet property="thumbnailImageView" destination="hMb-NA-YP9" id="YPG-hF-Nqm"/>
+                <outlet property="timeLabel" destination="4dv-GD-5o4" id="o3n-2e-R9q"/>
+                <outlet property="titleLabel" destination="ahi-Wn-lXf" id="9Y9-CK-aWF"/>
+            </connections>
             <point key="canvasLocation" x="199.27536231884059" y="192.85714285714286"/>
         </tableViewCell>
     </objects>

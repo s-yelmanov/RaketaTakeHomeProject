@@ -17,7 +17,7 @@ final class TopListCoordinator: Coordinator {
     }
 
     func start() {
-        let topListViewModel = TopListViewModel(coordinator: self)
+        let topListViewModel = TopListViewModel(coordinator: self, service: RedditService())
         let topListViewController = UIStoryboard.instantiateTopListViewController(viewModel: topListViewModel)
         
         navigationController.setViewControllers([topListViewController], animated: true)

@@ -32,7 +32,11 @@ final class TopListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
+
         setupUI()
+
+        viewModel.fetchTopPosts()
     }
 
     // MARK: - SetupUI
@@ -40,6 +44,16 @@ final class TopListViewController: UIViewController {
     private func setupUI() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = viewModel.title
+    }
+
+}
+
+    // MARK: - Top  list view model delegate
+
+extension TopListViewController: TopListViewModelDelegate {
+
+    func topListViewModelShouldReloadData(_ topListViewModel: TopListViewModel) {
+        tableView.reloadDataOnMainThread()
     }
 
 }
@@ -53,11 +67,13 @@ extension TopListViewController: UITableViewDelegate {}
 extension TopListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        viewModel.numberOfItems
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: TopListTableViewCell = tableView.dequeueReusableCell(type: TopListTableViewCell.self)
+
+        cell.setup(item: viewModel.itemAt(indexPath))
 
         return cell
     }
