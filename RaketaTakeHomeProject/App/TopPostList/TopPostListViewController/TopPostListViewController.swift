@@ -51,9 +51,9 @@ final class TopPostListViewController: UIViewController {
 
     private func setupUI() {
         setupNavigationBar(
-            titleColor: .white,
-            backgoundColor: #colorLiteral(red: 0.1333333333, green: 0.1529411765, blue: 0.168627451, alpha: 1),
-            tintColor: .white,
+            titleColor: .mainText,
+            backgoundColor: .secondaryBackground,
+            tintColor: .mainText,
             title: viewModel.title
         )
     }
@@ -68,7 +68,7 @@ final class TopPostListViewController: UIViewController {
             for: .valueChanged
         )
 
-        refreshControl.tintColor = .white
+        refreshControl.tintColor = .refreshControl
     }
 
     // MARK: - Actions

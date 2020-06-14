@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
 
         appCoordinator = AppCoordinator(
-            navigationController: LightStatusBarNavigationController(),
+            navigationController: UINavigationController(),
             window: window)
         appCoordinator?.start()
     }

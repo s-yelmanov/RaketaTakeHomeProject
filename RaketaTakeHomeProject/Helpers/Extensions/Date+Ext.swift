@@ -11,15 +11,16 @@ import Foundation
 extension Date {
 
     func timeAgoSinceDate() -> String {
+        let calendar =  Calendar.current
         let fromDate = self
         let toDate = Date()
 
-        if let interval = Calendar.current.dateComponents([.hour], from: fromDate, to: toDate).hour,
+        if let interval = calendar.dateComponents([.hour], from: fromDate, to: toDate).hour,
             interval > 0 {
             return interval == 1 ? "\(interval)" + " " + "hour ago" : "\(interval)" + " " + "hours ago"
         }
 
-        if let interval = Calendar.current.dateComponents([.minute], from: fromDate, to: toDate).minute,
+        if let interval = calendar.dateComponents([.minute], from: fromDate, to: toDate).minute,
             interval > 0 {
             return interval == 1 ? "\(interval)" + " " + "minute ago" : "\(interval)" + " " + "minutes ago"
         }
