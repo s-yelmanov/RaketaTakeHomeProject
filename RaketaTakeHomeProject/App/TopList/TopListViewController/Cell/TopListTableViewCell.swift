@@ -22,8 +22,7 @@ final class TopListTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        thumbnailImageView.layer.cornerRadius = thumbnailImageView.frame.height / 2
-        thumbnailImageView.layer.masksToBounds = true
+        thumbnailImageView.roundCorners()
     }
 
     override func prepareForReuse() {

@@ -9,19 +9,15 @@
 import Foundation
 
 struct RedditTopResponse: Codable {
-
     let data: RedditTopDataResponse
 }
 
 struct RedditTopDataResponse: Codable {
-
     let children: [RedditTopDataChildrenResponse]
 }
 
 struct RedditTopDataChildrenResponse: Codable {
-
     let data: RedditTopItemResponse
-
 }
 
 struct RedditTopItemResponse: Codable {
@@ -42,4 +38,17 @@ struct RedditTopItemResponse: Codable {
         return date.timeAgoSinceDate()
     }
 
+}
+
+struct RedditTopItemPreviewResponse:Codable {
+    let images: [RedditTopItemImageResponse]
+}
+
+struct RedditTopItemImageResponse: Codable {
+    let source: RedditTopItemImageSourceResponse
+
+}
+
+struct RedditTopItemImageSourceResponse: Codable {
+    let url: String?
 }

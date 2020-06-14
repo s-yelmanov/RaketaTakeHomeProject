@@ -19,6 +19,8 @@ final class TopListViewModel {
     private let coordinator: TopListCoordinator
     private let service: RedditService
 
+    private lazy var validator = ImageTypeValidator()
+
     private var items = [RedditTopDataChildrenResponse]()
 
     // MARK: - Properties
@@ -58,6 +60,14 @@ final class TopListViewModel {
     func itemAt(_ indexPath: IndexPath) -> RedditTopItemResponse {
         items[indexPath.row].data
     }
+
+    func didSelectRowAt(_ indexPath: IndexPath) {
+        guard let url = validator.validate(items[indexPath.row].data.url) else { return }
+        showImageDetails(with: url)
+    }
+
+    private func showImageDetails(with imageURL: String) {
+        coordinator.showImageDetails(with: imageURL)
+    }
     
 }
-

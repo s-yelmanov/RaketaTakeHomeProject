@@ -27,6 +27,16 @@
 		FFAFC81324951F440098AEBD /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC81224951F440098AEBD /* UIImage+Ext.swift */; };
 		FFAFC8152495219D0098AEBD /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC8142495219D0098AEBD /* Date+Ext.swift */; };
 		FFAFC817249521B50098AEBD /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC816249521B50098AEBD /* UITableView+Ext.swift */; };
+		FFAFC81A249527890098AEBD /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC819249527890098AEBD /* UIView+Ext.swift */; };
+		FFAFC820249541A70098AEBD /* ImageDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC81F249541A70098AEBD /* ImageDetailsCoordinator.swift */; };
+		FFAFC823249541ED0098AEBD /* ImageDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC822249541ED0098AEBD /* ImageDetailsViewModel.swift */; };
+		FFAFC825249541FE0098AEBD /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC824249541FE0098AEBD /* ImageDetailsViewController.swift */; };
+		FFAFC8272495420C0098AEBD /* ImageDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAFC8262495420C0098AEBD /* ImageDetails.storyboard */; };
+		FFAFC82924954C780098AEBD /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC82824954C780098AEBD /* String+Ext.swift */; };
+		FFAFC82B24961A080098AEBD /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC82A24961A080098AEBD /* AlertService.swift */; };
+		FFAFC82D24961F7F0098AEBD /* ImageGalleryWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC82C24961F7F0098AEBD /* ImageGalleryWriter.swift */; };
+		FFAFC830249626CF0098AEBD /* ImageTypeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC82F249626CF0098AEBD /* ImageTypeValidator.swift */; };
+		FFAFC833249628D20098AEBD /* PhotoLibraryPermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC832249628D20098AEBD /* PhotoLibraryPermissionService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +62,16 @@
 		FFAFC81224951F440098AEBD /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		FFAFC8142495219D0098AEBD /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		FFAFC816249521B50098AEBD /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
+		FFAFC819249527890098AEBD /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		FFAFC81F249541A70098AEBD /* ImageDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsCoordinator.swift; sourceTree = "<group>"; };
+		FFAFC822249541ED0098AEBD /* ImageDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewModel.swift; sourceTree = "<group>"; };
+		FFAFC824249541FE0098AEBD /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
+		FFAFC8262495420C0098AEBD /* ImageDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageDetails.storyboard; sourceTree = "<group>"; };
+		FFAFC82824954C780098AEBD /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		FFAFC82A24961A080098AEBD /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		FFAFC82C24961F7F0098AEBD /* ImageGalleryWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryWriter.swift; sourceTree = "<group>"; };
+		FFAFC82F249626CF0098AEBD /* ImageTypeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTypeValidator.swift; sourceTree = "<group>"; };
+		FFAFC832249628D20098AEBD /* PhotoLibraryPermissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryPermissionService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +110,7 @@
 				FFAFC7DA2494DB360098AEBD /* SceneDelegate.swift */,
 				FFAFC7E32494DB370098AEBD /* LaunchScreen.storyboard */,
 				FFAFC7F02494DC3A0098AEBD /* Network */,
+				FFAFC8312496288F0098AEBD /* Service */,
 				FFAFC7EF2494DC340098AEBD /* App */,
 				FFAFC7F12494DC400098AEBD /* Helpers */,
 				FFAFC7F22494DC5A0098AEBD /* Supporting files */,
@@ -124,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				FFAFC7F32494DEB20098AEBD /* TopList */,
+				FFAFC81E2495417A0098AEBD /* ImageDetails */,
+				FFAFC82E249626B80098AEBD /* Validators */,
 				FFAFC7FE2494DFCF0098AEBD /* AppCoordinator.swift */,
 			);
 			path = App;
@@ -181,8 +204,10 @@
 				FFAFC808249511710098AEBD /* Reusable.swift */,
 				FFAFC8012494E1060098AEBD /* UIStoryboard+Ext.swift */,
 				FFAFC81224951F440098AEBD /* UIImage+Ext.swift */,
+				FFAFC819249527890098AEBD /* UIView+Ext.swift */,
 				FFAFC816249521B50098AEBD /* UITableView+Ext.swift */,
 				FFAFC8142495219D0098AEBD /* Date+Ext.swift */,
+				FFAFC82824954C780098AEBD /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -203,6 +228,43 @@
 				FFAFC81024951B480098AEBD /* RedditTopResponse.swift */,
 			);
 			path = Reddit;
+			sourceTree = "<group>";
+		};
+		FFAFC81E2495417A0098AEBD /* ImageDetails */ = {
+			isa = PBXGroup;
+			children = (
+				FFAFC81F249541A70098AEBD /* ImageDetailsCoordinator.swift */,
+				FFAFC821249541DB0098AEBD /* ImageDetailsViewController */,
+				FFAFC8262495420C0098AEBD /* ImageDetails.storyboard */,
+			);
+			path = ImageDetails;
+			sourceTree = "<group>";
+		};
+		FFAFC821249541DB0098AEBD /* ImageDetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FFAFC822249541ED0098AEBD /* ImageDetailsViewModel.swift */,
+				FFAFC824249541FE0098AEBD /* ImageDetailsViewController.swift */,
+			);
+			path = ImageDetailsViewController;
+			sourceTree = "<group>";
+		};
+		FFAFC82E249626B80098AEBD /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				FFAFC82F249626CF0098AEBD /* ImageTypeValidator.swift */,
+			);
+			path = Validators;
+			sourceTree = "<group>";
+		};
+		FFAFC8312496288F0098AEBD /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FFAFC82A24961A080098AEBD /* AlertService.swift */,
+				FFAFC82C24961F7F0098AEBD /* ImageGalleryWriter.swift */,
+				FFAFC832249628D20098AEBD /* PhotoLibraryPermissionService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +329,7 @@
 				FFAFC7F52494DED60098AEBD /* TopList.storyboard in Resources */,
 				FFAFC7E22494DB370098AEBD /* Images.xcassets in Resources */,
 				FFAFC807249511310098AEBD /* TopListTableViewCell.xib in Resources */,
+				FFAFC8272495420C0098AEBD /* ImageDetails.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,20 +340,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFAFC82B24961A080098AEBD /* AlertService.swift in Sources */,
+				FFAFC81A249527890098AEBD /* UIView+Ext.swift in Sources */,
 				FFAFC80B24951A970098AEBD /* NetworkService.swift in Sources */,
 				FFAFC81124951B480098AEBD /* RedditTopResponse.swift in Sources */,
 				FFAFC7FF2494DFCF0098AEBD /* AppCoordinator.swift in Sources */,
 				FFAFC7FA2494DF9B0098AEBD /* TopListViewModel.swift in Sources */,
+				FFAFC830249626CF0098AEBD /* ImageTypeValidator.swift in Sources */,
 				FFAFC7F72494DEF50098AEBD /* TopListViewController.swift in Sources */,
 				FFAFC809249511710098AEBD /* Reusable.swift in Sources */,
+				FFAFC833249628D20098AEBD /* PhotoLibraryPermissionService.swift in Sources */,
 				FFAFC8022494E1060098AEBD /* UIStoryboard+Ext.swift in Sources */,
 				FFAFC81324951F440098AEBD /* UIImage+Ext.swift in Sources */,
 				FFAFC7D92494DB360098AEBD /* AppDelegate.swift in Sources */,
+				FFAFC82D24961F7F0098AEBD /* ImageGalleryWriter.swift in Sources */,
 				FFAFC8152495219D0098AEBD /* Date+Ext.swift in Sources */,
 				FFAFC7DB2494DB360098AEBD /* SceneDelegate.swift in Sources */,
 				FFAFC7FC2494DFB00098AEBD /* TopListCoordinator.swift in Sources */,
+				FFAFC823249541ED0098AEBD /* ImageDetailsViewModel.swift in Sources */,
+				FFAFC825249541FE0098AEBD /* ImageDetailsViewController.swift in Sources */,
+				FFAFC82924954C780098AEBD /* String+Ext.swift in Sources */,
 				FFAFC80D24951AAA0098AEBD /* NetworkError.swift in Sources */,
 				FFAFC817249521B50098AEBD /* UITableView+Ext.swift in Sources */,
+				FFAFC820249541A70098AEBD /* ImageDetailsCoordinator.swift in Sources */,
 				FFAFC806249511310098AEBD /* TopListTableViewCell.swift in Sources */,
 				FFAFC80F24951ADE0098AEBD /* RedditService.swift in Sources */,
 			);

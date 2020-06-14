@@ -60,7 +60,14 @@ extension TopListViewController: TopListViewModelDelegate {
 
     // MARK: - Table view delegate
 
-extension TopListViewController: UITableViewDelegate {}
+extension TopListViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelectRowAt(indexPath)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+}
 
     // MARK: - Table view data source
 

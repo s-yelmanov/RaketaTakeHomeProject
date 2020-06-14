@@ -44,7 +44,8 @@ final class NetworkService {
     /// Method for fetching and parsing response from API.
     func fetchData<T: Decodable>(
         with request: URLRequest,
-        completionHandler: @escaping (Result<T, NetworkingError>) -> Void) {
+        completionHandler: @escaping (Result<T, NetworkingError>) -> Void
+    ) {
         if !internetAvailable {
             completionHandler(.failure(.noInternet))
             return

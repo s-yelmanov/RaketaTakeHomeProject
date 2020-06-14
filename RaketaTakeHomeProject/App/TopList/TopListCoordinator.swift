@@ -22,5 +22,12 @@ final class TopListCoordinator: Coordinator {
         
         navigationController.setViewControllers([topListViewController], animated: true)
     }
+
+    func showImageDetails(with imageURL: String) {
+        let imageDetailsCoordinator = ImageDetailsCoordinator(
+            navigationController: navigationController,
+            imageURL: imageURL)
+        imageDetailsCoordinator.start()
+    }
     
 }
