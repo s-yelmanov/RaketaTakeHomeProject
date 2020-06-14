@@ -23,6 +23,9 @@ final class TopListViewController: UIViewController {
             
             tableView.tableFooterView = UIView()
             tableView.tableHeaderView = UIView()
+            tableView.separatorStyle = .none
+            tableView.allowsSelection = false
+            tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
 
             tableView.rowHeight = UITableView.automaticDimension
         }
@@ -47,7 +50,12 @@ final class TopListViewController: UIViewController {
     // MARK: - SetupUI
 
     private func setupUI() {
-        navigationItem.title = viewModel.title
+        setupNavigationBar(
+            titleColor: .white,
+            backgoundColor: #colorLiteral(red: 0.1333333333, green: 0.1529411765, blue: 0.168627451, alpha: 1),
+            tintColor: .white,
+            title: viewModel.title
+        )
     }
 
     private func setupRefreshControl() {
@@ -60,7 +68,7 @@ final class TopListViewController: UIViewController {
             for: .valueChanged
         )
 
-        refreshControl.tintColor = .darkGray
+        refreshControl.tintColor = .white
     }
 
     // MARK: - Actions
@@ -95,14 +103,20 @@ extension TopListViewController: TopListViewModelDelegate {
 
 }
 
+    // MARK: - Top list table view cell delegate
+
+extension TopListViewController: TopListTableViewCellDelegate {
+
+    func topListTableViewCellImageTapped(_ topListTableViewCell: TopListTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: topListTableViewCell) else { return }
+        viewModel.didSelectRowAt(indexPath)
+    }
+
+}
+
     // MARK: - Table view delegate
 
 extension TopListViewController: UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.didSelectRowAt(indexPath)
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == viewModel.numberOfItems - 5, !viewModel.isLoadingList {
@@ -131,6 +145,7 @@ extension TopListViewController: UITableViewDataSource {
                 let cell: TopListTableViewCell = tableView.dequeueReusableCell(type: TopListTableViewCell.self)
 
                 cell.setup(item: viewModel.itemAt(indexPath))
+                cell.delegate = self
 
                 return cell
             }

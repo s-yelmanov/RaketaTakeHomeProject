@@ -10,10 +10,11 @@ import UIKit
 
 extension UIImageView {
 
-    func loadImage(fromURL url: String?) {
-//        image = UIImage(named: "placeholder")
-
-        guard let imageURL = URL(string: url ?? "") else { return }
+    func loadImage(fromURL url: String?, completionHandler: ((Bool) -> Void)? = nil) {
+        guard let imageURL = URL(string: url ?? "") else {
+            completionHandler?(false)
+            return
+        }
 
         let session = URLSession.shared
         let cache =  URLCache.shared
@@ -23,6 +24,7 @@ extension UIImageView {
             if let data = cache.cachedResponse(for: request)?.data, let image = UIImage(data: data) {
                 DispatchQueue.main.async {
                     self.image = image
+                    completionHandler?(true)
                 }
             } else {
                 session.dataTask(with: request) { (data, response, error) in
@@ -37,7 +39,10 @@ extension UIImageView {
                         cache.storeCachedResponse(cachedData, for: request)
                         DispatchQueue.main.async {
                             self.transition(toImage: image)
+                            completionHandler?(true)
                         }
+                    } else {
+                        completionHandler?(false)
                     }
                 }.resume()
             }

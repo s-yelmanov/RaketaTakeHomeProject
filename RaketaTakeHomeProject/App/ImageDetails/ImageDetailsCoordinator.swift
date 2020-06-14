@@ -23,7 +23,7 @@ final class ImageDetailsCoordinator: Coordinator {
         let imageDetailsController = UIStoryboard.instantiateImageDetailsViewController(
             viewModel: imageDetailsViewModel)
         
-        let navigationController = UINavigationController(rootViewController: imageDetailsController)
+        let navigationController = LightStatusBarNavigationController(rootViewController: imageDetailsController)
 
         navigationController.modalPresentationStyle = .fullScreen
         navigationController.modalTransitionStyle = .crossDissolve

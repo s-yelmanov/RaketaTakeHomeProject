@@ -15,19 +15,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qyn-Nb-kbw">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qyn-Nb-kbw">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.070588235294117646" green="0.090196078431372548" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.070588235294117646" green="0.090196078431372548" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="AqI-2k-VgF" id="Edo-hy-6Wn"/>
                                     <outlet property="delegate" destination="AqI-2k-VgF" id="kt5-Ry-Azv"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.070588235294117646" green="0.090196078431372548" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Qyn-Nb-kbw" secondAttribute="trailing" id="6Pr-Nh-jxP"/>
-                            <constraint firstItem="Qyn-Nb-kbw" firstAttribute="leading" secondItem="zso-UQ-zAF" secondAttribute="leading" id="GFc-DE-M5x"/>
+                            <constraint firstItem="Ijh-vz-iRX" firstAttribute="trailing" secondItem="Qyn-Nb-kbw" secondAttribute="trailing" id="6Pr-Nh-jxP"/>
+                            <constraint firstItem="Qyn-Nb-kbw" firstAttribute="leading" secondItem="Ijh-vz-iRX" secondAttribute="leading" id="GFc-DE-M5x"/>
                             <constraint firstItem="Qyn-Nb-kbw" firstAttribute="top" secondItem="zso-UQ-zAF" secondAttribute="top" id="UJH-BB-Qej"/>
                             <constraint firstAttribute="bottom" secondItem="Qyn-Nb-kbw" secondAttribute="bottom" id="twh-hL-aps"/>
                         </constraints>

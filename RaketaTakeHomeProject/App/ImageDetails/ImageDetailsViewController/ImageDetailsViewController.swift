@@ -16,12 +16,14 @@ final class ImageDetailsViewController: UIViewController {
 
     // MARK: - IBOutlets
 
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var imageView: UIImageView!
     
     // MARK: - Life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadImage()
         viewModel.delegate = self
         setupUI()
     }
@@ -31,9 +33,11 @@ final class ImageDetailsViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .black
 
-        imageView.loadImage(fromURL: viewModel.imageURL)
-
-        setupNavigationBar()
+        setupNavigationBar(
+            titleColor: .white,
+            backgoundColor: .clear,
+            tintColor: .white,
+            title: nil)
         setupNavigationItemButtons()
     }
 
@@ -58,12 +62,21 @@ final class ImageDetailsViewController: UIViewController {
         navigationItem.rightBarButtonItem = saveButton
     }
 
-    private func setupNavigationBar() {
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.barStyle = .black
-        navigationController?.view.backgroundColor = .clear
+    private func loadImage() {
+        imageView.loadImage(fromURL: viewModel.imageURL) { [weak self] isSuccess in
+            guard let self = self else { return }
+            self.activityIndicator.stopAnimating()
+
+            if !isSuccess {
+                AlertService.showAlert(
+                vc: self,
+                title: "Error",
+                message: "Something went wrong. Please try again later"
+                ) {
+                    self.dismiss(animated: true)
+                }
+            }
+        }
     }
 
     // MARK: - Actions

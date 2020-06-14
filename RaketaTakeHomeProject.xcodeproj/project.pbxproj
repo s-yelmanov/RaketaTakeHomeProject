@@ -11,6 +11,8 @@
 		FF1B2F7E249634C800B13453 /* LoadingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1B2F7C249634C800B13453 /* LoadingTableViewCell.xib */; };
 		FF1B2F802496403500B13453 /* UIRefreshControl+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B2F7F2496403500B13453 /* UIRefreshControl+Ext.swift */; };
 		FF1B2F822496415600B13453 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B2F812496415600B13453 /* UIColor+Ext.swift */; };
+		FF1B2F852496481E00B13453 /* LightStatusBarNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B2F842496481E00B13453 /* LightStatusBarNavigationController.swift */; };
+		FF1B2F872496521800B13453 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B2F862496521800B13453 /* UIViewController+Ext.swift */; };
 		FFAFC7D92494DB360098AEBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC7D82494DB360098AEBD /* AppDelegate.swift */; };
 		FFAFC7DB2494DB360098AEBD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC7DA2494DB360098AEBD /* SceneDelegate.swift */; };
 		FFAFC7E22494DB370098AEBD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAFC7E12494DB370098AEBD /* Images.xcassets */; };
@@ -48,6 +50,8 @@
 		FF1B2F7C249634C800B13453 /* LoadingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingTableViewCell.xib; sourceTree = "<group>"; };
 		FF1B2F7F2496403500B13453 /* UIRefreshControl+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Ext.swift"; sourceTree = "<group>"; };
 		FF1B2F812496415600B13453 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		FF1B2F842496481E00B13453 /* LightStatusBarNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightStatusBarNavigationController.swift; sourceTree = "<group>"; };
+		FF1B2F862496521800B13453 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		FFAFC7D52494DB360098AEBD /* RaketaTakeHomeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaketaTakeHomeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFAFC7D82494DB360098AEBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFAFC7DA2494DB360098AEBD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 		FF1B2F79249634A400B13453 /* GeneralViews */ = {
 			isa = PBXGroup;
 			children = (
+				FF1B2F83249647FA00B13453 /* ViewControllers */,
 				FF1B2F7A249634AF00B13453 /* Cells */,
 			);
 			path = GeneralViews;
@@ -108,6 +113,14 @@
 				FF1B2F7C249634C800B13453 /* LoadingTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		FF1B2F83249647FA00B13453 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FF1B2F842496481E00B13453 /* LightStatusBarNavigationController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		FFAFC7CC2494DB360098AEBD = {
@@ -231,6 +244,7 @@
 				FF1B2F812496415600B13453 /* UIColor+Ext.swift */,
 				FFAFC8012494E1060098AEBD /* UIStoryboard+Ext.swift */,
 				FFAFC81224951F440098AEBD /* UIImage+Ext.swift */,
+				FF1B2F862496521800B13453 /* UIViewController+Ext.swift */,
 				FFAFC819249527890098AEBD /* UIView+Ext.swift */,
 				FFAFC816249521B50098AEBD /* UITableView+Ext.swift */,
 				FF1B2F7F2496403500B13453 /* UIRefreshControl+Ext.swift */,
@@ -371,10 +385,12 @@
 			files = (
 				FFAFC82B24961A080098AEBD /* AlertService.swift in Sources */,
 				FFAFC81A249527890098AEBD /* UIView+Ext.swift in Sources */,
+				FF1B2F872496521800B13453 /* UIViewController+Ext.swift in Sources */,
 				FFAFC80B24951A970098AEBD /* NetworkService.swift in Sources */,
 				FFAFC81124951B480098AEBD /* RedditTopResponse.swift in Sources */,
 				FFAFC7FF2494DFCF0098AEBD /* AppCoordinator.swift in Sources */,
 				FFAFC7FA2494DF9B0098AEBD /* TopListViewModel.swift in Sources */,
+				FF1B2F852496481E00B13453 /* LightStatusBarNavigationController.swift in Sources */,
 				FFAFC830249626CF0098AEBD /* ImageTypeValidator.swift in Sources */,
 				FFAFC7F72494DEF50098AEBD /* TopListViewController.swift in Sources */,
 				FFAFC809249511710098AEBD /* Reusable.swift in Sources */,
@@ -539,10 +555,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sergey.yelmanov.RaketaTakeHomeProject.RaketaTakeHomeProject;
+				PRODUCT_BUNDLE_IDENTIFIER = sergey.yelmanov.RaketaTakeHomeProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -557,10 +573,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sergey.yelmanov.RaketaTakeHomeProject.RaketaTakeHomeProject;
+				PRODUCT_BUNDLE_IDENTIFIER = sergey.yelmanov.RaketaTakeHomeProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

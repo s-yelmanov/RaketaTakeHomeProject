@@ -18,17 +18,24 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="srY-dH-siO">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="7Kz-ub-eYn">
+                                <rect key="frame" x="197" y="443" width="20" height="20"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="srY-dH-siO" secondAttribute="trailing" id="D3T-N1-QzA"/>
+                            <constraint firstItem="7Kz-ub-eYn" firstAttribute="centerY" secondItem="gSS-6F-DWO" secondAttribute="centerY" id="GCJ-4w-G0M"/>
                             <constraint firstItem="srY-dH-siO" firstAttribute="top" secondItem="9ve-jZ-GuC" secondAttribute="top" id="Ifd-Lo-Deb"/>
+                            <constraint firstItem="7Kz-ub-eYn" firstAttribute="centerX" secondItem="gSS-6F-DWO" secondAttribute="centerX" id="JAk-Pj-ovD"/>
                             <constraint firstItem="srY-dH-siO" firstAttribute="leading" secondItem="9ve-jZ-GuC" secondAttribute="leading" id="nSn-Yr-NVP"/>
                             <constraint firstAttribute="bottom" secondItem="srY-dH-siO" secondAttribute="bottom" id="vuL-Q7-RTw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gSS-6F-DWO"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="7Kz-ub-eYn" id="btI-II-zW2"/>
                         <outlet property="imageView" destination="srY-dH-siO" id="5xe-o4-elt"/>
                     </connections>
                 </viewController>
