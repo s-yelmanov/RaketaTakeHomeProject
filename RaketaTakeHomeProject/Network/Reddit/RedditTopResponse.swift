@@ -14,6 +14,7 @@ struct RedditTopResponse: Codable {
 
 struct RedditTopDataResponse: Codable {
     let children: [RedditTopDataChildrenResponse]
+    let after: String?
 }
 
 struct RedditTopDataChildrenResponse: Codable {

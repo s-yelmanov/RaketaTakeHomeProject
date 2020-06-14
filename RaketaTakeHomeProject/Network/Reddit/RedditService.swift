@@ -14,8 +14,8 @@ final class RedditService {
 
     init() {}
 
-    private func getRequest() -> URLRequest? {
-        guard let url = URL(string: baseUrlString) else {
+    private func getRequest(lastPostID: String?) -> URLRequest? {
+        guard let url = URL(string: baseUrlString + "?after=\(lastPostID ?? "")") else {
             return nil
         }
 
@@ -24,8 +24,8 @@ final class RedditService {
         return request
     }
 
-    func getTopPosts(completionHandler: @escaping (Result<RedditTopResponse, NetworkingError>) -> Void) {
-        guard let urlRequest = getRequest() else {
+    func getTopPosts(lastPostID: String?, completionHandler: @escaping (Result<RedditTopResponse, NetworkingError>) -> Void) {
+        guard let urlRequest = getRequest(lastPostID: lastPostID) else {
             completionHandler(.failure(.invalidUrl))
             return
         }

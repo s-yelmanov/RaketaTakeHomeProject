@@ -10,6 +10,9 @@ import Foundation
 
 protocol TopListViewModelDelegate: class {
     func topListViewModelShouldReloadData(_ topListViewModel: TopListViewModel)
+    func topListViewModel(
+        _ topListViewModel: TopListViewModel,
+        failedToLoadDataWithMessage message: String)
 }
 
 final class TopListViewModel {
@@ -22,6 +25,8 @@ final class TopListViewModel {
     private lazy var validator = ImageTypeValidator()
 
     private var items = [RedditTopDataChildrenResponse]()
+    private var lastPostID: String?
+    private(set) var isLoadingList = false
 
     // MARK: - Properties
 
@@ -29,7 +34,7 @@ final class TopListViewModel {
 
     let title = "Top posts"
     var numberOfItems: Int {
-        items.count
+        items.count + 1
     }
 
     // MARK: - Life cycle
@@ -41,16 +46,37 @@ final class TopListViewModel {
 
     // MARK: - Networking
 
-    func fetchTopPosts() {
-        service.getTopPosts { [weak self] result in
+    func fetchTopPosts(isRefreshing: Bool = false) {
+        if isRefreshing {
+            lastPostID = nil
+        }
+
+        isLoadingList = true
+        
+        service.getTopPosts(lastPostID: lastPostID) { [weak self] result in
             guard let self = self else { return }
+
+            self.isLoadingList = false
 
             switch result {
             case .success(let response):
-                self.items = response.data.children
-                self.delegate?.topListViewModelShouldReloadData(self)
+                if isRefreshing {
+                    self.items.removeAll()
+                }
+                
+                self.lastPostID = response.data.after
+                self.items.append(contentsOf: response.data.children)
+                
+                DispatchQueue.main.async {
+                    self.delegate?.topListViewModelShouldReloadData(self)
+                }
             case .failure(let error):
-                print(error.localizedDescription)
+                DispatchQueue.main.async {
+                    self.delegate?.topListViewModel(
+                        self,
+                        failedToLoadDataWithMessage: error.localizedDescription
+                    )
+                }
             }
         }
     }
