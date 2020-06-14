@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Top List View Controller-->
+        <!--Top Post List View Controller-->
         <scene sceneID="MIJ-t7-shL">
             <objects>
-                <viewController storyboardIdentifier="TopListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AqI-2k-VgF" customClass="TopListViewController" customModule="RaketaTakeHomeProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TopPostListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AqI-2k-VgF" customClass="TopPostListViewController" customModule="RaketaTakeHomeProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zso-UQ-zAF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -34,7 +34,7 @@ final class AppCoordinator: Coordinator {
     }
 
     private func showTopList() {
-        let topListCoorinator = TopListCoordinator(navigationController: navigationController)
+        let topListCoorinator = TopPostListCoordinator(navigationController: navigationController)
         topListCoorinator.start()
     }
 

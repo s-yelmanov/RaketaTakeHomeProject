@@ -10,20 +10,20 @@ import UIKit
 
 extension UIStoryboard {
 
-    private static var topList: UIStoryboard {
-        return UIStoryboard(name: "TopList", bundle: nil)
+    private static var topPostList: UIStoryboard {
+        return UIStoryboard(name: "TopPostList", bundle: nil)
     }
 
     private static var imageDetails: UIStoryboard {
         return UIStoryboard(name: "ImageDetails", bundle: nil)
     }
     
-    static func instantiateTopListViewController(viewModel: TopListViewModel) -> TopListViewController {
-        let topListViewController = topList.instantiateViewController(
-            withIdentifier: String(describing: TopListViewController.self)) as! TopListViewController
-        topListViewController.viewModel = viewModel
+    static func instantiateTopListViewController(viewModel: TopPostListViewModel) -> TopPostListViewController {
+        let topPostListViewController = topPostList.instantiateViewController(
+            withIdentifier: String(describing: TopPostListViewController.self)) as! TopPostListViewController
+        topPostListViewController.viewModel = viewModel
         
-        return topListViewController
+        return topPostListViewController
     }
 
     static func instantiateImageDetailsViewController(viewModel: ImageDetailsViewModel) -> ImageDetailsViewController {

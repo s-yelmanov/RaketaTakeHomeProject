@@ -1,5 +1,5 @@
 //
-//  TopListTableViewCell.swift
+//  TopPostListTableViewCell.swift
 //  RaketaTakeHomeProject
 //
 //  Created by Sergey Yelmanov on 13.06.2020.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol TopListTableViewCellDelegate: class {
-    func topListTableViewCellImageTapped(_ topListTableViewCell: TopListTableViewCell)
+protocol TopPostListTableViewCellDelegate: class {
+    func topPostListTableViewCellImageTapped(_ topPostListTableViewCell: TopPostListTableViewCell)
 }
 
-final class TopListTableViewCell: UITableViewCell {
+final class TopPostListTableViewCell: UITableViewCell {
 
     // MARK: - IBOutlets
 
@@ -25,7 +25,7 @@ final class TopListTableViewCell: UITableViewCell {
 
     // MARK: - Properties
 
-    weak var delegate: TopListTableViewCellDelegate?
+    weak var delegate: TopPostListTableViewCellDelegate?
 
     // MARK: - Life cycle
 
@@ -64,7 +64,7 @@ final class TopListTableViewCell: UITableViewCell {
     // MARK: - Actions
 
     @objc private func thumbnailImageViewTapGestureAction() {
-        delegate?.topListTableViewCellImageTapped(self)
+        delegate?.topPostListTableViewCellImageTapped(self)
     }
 
 }

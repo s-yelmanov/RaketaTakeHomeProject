@@ -1,5 +1,5 @@
 //
-//  TopListCoordinator.swift
+//  TopPostListCoordinator.swift
 //  RaketaTakeHomeProject
 //
 //  Created by Sergey Yelmanov on 13.06.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class TopListCoordinator: Coordinator {
+final class TopPostListCoordinator: Coordinator {
 
     private let navigationController: UINavigationController
 
@@ -17,10 +17,10 @@ final class TopListCoordinator: Coordinator {
     }
 
     func start() {
-        let topListViewModel = TopListViewModel(coordinator: self, service: RedditService())
-        let topListViewController = UIStoryboard.instantiateTopListViewController(viewModel: topListViewModel)
+        let topPostListViewModel = TopPostListViewModel(coordinator: self, service: RedditService())
+        let topPostListViewController = UIStoryboard.instantiateTopListViewController(viewModel: topPostListViewModel)
         
-        navigationController.setViewControllers([topListViewController], animated: true)
+        navigationController.setViewControllers([topPostListViewController], animated: true)
     }
 
     func showImageDetails(with imageURL: String) {

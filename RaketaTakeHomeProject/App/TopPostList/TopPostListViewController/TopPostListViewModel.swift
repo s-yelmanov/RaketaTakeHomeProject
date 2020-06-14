@@ -1,5 +1,5 @@
 //
-//  TopListViewModel.swift
+//  TopPostListViewModel.swift
 //  RaketaTakeHomeProject
 //
 //  Created by Sergey Yelmanov on 13.06.2020.
@@ -8,38 +8,37 @@
 
 import Foundation
 
-protocol TopListViewModelDelegate: class {
-    func topListViewModelShouldReloadData(_ topListViewModel: TopListViewModel)
-    func topListViewModel(
-        _ topListViewModel: TopListViewModel,
+protocol TopPostListViewModelDelegate: class {
+    func topPostListViewModelShouldReloadData(_ topPostListViewModel: TopPostListViewModel)
+    func topPostListViewModel(
+        _ topPostListViewModel: TopPostListViewModel,
         failedToLoadDataWithMessage message: String)
 }
 
-final class TopListViewModel {
+final class TopPostListViewModel {
 
     // MARK: - Private properties
 
-    private let coordinator: TopListCoordinator
+    private let coordinator: TopPostListCoordinator
     private let service: RedditService
 
     private lazy var validator = ImageTypeValidator()
 
     private var items = [RedditTopDataChildrenResponse]()
-    private var lastPostID: String?
-    private(set) var isLoadingList = false
+    private(set) var paginationData = PaginationData()
 
     // MARK: - Properties
 
-    weak var delegate: TopListViewModelDelegate?
+    weak var delegate: TopPostListViewModelDelegate?
 
     let title = "Top posts"
     var numberOfItems: Int {
-        items.count + 1
+        paginationData.hasMoreItemsToLoad ? items.count + 1 : items.count
     }
 
     // MARK: - Life cycle
 
-    init(coordinator: TopListCoordinator, service: RedditService) {
+    init(coordinator: TopPostListCoordinator, service: RedditService) {
         self.coordinator = coordinator
         self.service = service
     }
@@ -48,31 +47,33 @@ final class TopListViewModel {
 
     func fetchTopPosts(isRefreshing: Bool = false) {
         if isRefreshing {
-            lastPostID = nil
+            paginationData.lastPostID = nil
         }
 
-        isLoadingList = true
+        paginationData.isLoadingList = true
         
-        service.getTopPosts(lastPostID: lastPostID) { [weak self] result in
+        service.getTopPosts(lastPostID: paginationData.lastPostID) { [weak self] result in
             guard let self = self else { return }
 
-            self.isLoadingList = false
+            self.paginationData.isLoadingList = false
 
             switch result {
             case .success(let response):
                 if isRefreshing {
                     self.items.removeAll()
                 }
-                
-                self.lastPostID = response.data.after
+
+                self.paginationData.hasMoreItemsToLoad = !response.data.children.isEmpty
+                self.paginationData.lastPostID = response.data.after
                 self.items.append(contentsOf: response.data.children)
                 
                 DispatchQueue.main.async {
-                    self.delegate?.topListViewModelShouldReloadData(self)
+                    self.delegate?.topPostListViewModelShouldReloadData(self)
                 }
             case .failure(let error):
+                self.paginationData.hasMoreItemsToLoad = false
                 DispatchQueue.main.async {
-                    self.delegate?.topListViewModel(
+                    self.delegate?.topPostListViewModel(
                         self,
                         failedToLoadDataWithMessage: error.localizedDescription
                     )

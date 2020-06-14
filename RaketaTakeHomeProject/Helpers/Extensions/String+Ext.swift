@@ -19,22 +19,3 @@ extension String {
     }
 
 }
-
-enum ImageType: String {
-
-    case jpg
-    case png
-
-    init?(rawValue: String) {
-        switch rawValue.lowercased() {
-        case "jpg", "jpeg":
-            self = .jpg
-        case "png":
-            self = .png
-        default:
-            return nil
-        }
-    }
-
-}
-

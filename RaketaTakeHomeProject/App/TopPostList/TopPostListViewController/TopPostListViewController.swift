@@ -1,5 +1,5 @@
 //
-//  TopListViewController.swift
+//  TopPostListViewController.swift
 //  RaketaTakeHomeProject
 //
 //  Created by Sergey Yelmanov on 13.06.2020.
@@ -8,17 +8,17 @@
 
 import UIKit
 
-final class TopListViewController: UIViewController {
+final class TopPostListViewController: UIViewController {
 
     // MARK: - Properties
 
-    var viewModel: TopListViewModel!
+    var viewModel: TopPostListViewModel!
 
     // MARK: - IBOutlets
 
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
-            tableView.register(type: TopListTableViewCell.self)
+            tableView.register(type: TopPostListTableViewCell.self)
             tableView.register(type: LoadingTableViewCell.self)
             
             tableView.tableFooterView = UIView()
@@ -81,15 +81,15 @@ final class TopListViewController: UIViewController {
 
     // MARK: - Top  list view model delegate
 
-extension TopListViewController: TopListViewModelDelegate {
+extension TopPostListViewController: TopPostListViewModelDelegate {
 
-    func topListViewModelShouldReloadData(_ topListViewModel: TopListViewModel) {
+    func topPostListViewModelShouldReloadData(_ topListViewModel: TopPostListViewModel) {
         refreshControl.stopRefreshingOnMainThread()
         tableView.reloadDataOnMainThread()
     }
 
-    func topListViewModel(
-        _ topListViewModel: TopListViewModel,
+    func topPostListViewModel(
+        _ topListViewModel: TopPostListViewModel,
         failedToLoadDataWithMessage message: String
     ) {
         AlertService.showAlert(
@@ -99,15 +99,16 @@ extension TopListViewController: TopListViewModelDelegate {
         )
         
         refreshControl.stopRefreshingOnMainThread()
+        tableView.reloadDataOnMainThread()
     }
 
 }
 
     // MARK: - Top list table view cell delegate
 
-extension TopListViewController: TopListTableViewCellDelegate {
+extension TopPostListViewController: TopPostListTableViewCellDelegate {
 
-    func topListTableViewCellImageTapped(_ topListTableViewCell: TopListTableViewCell) {
+    func topPostListTableViewCellImageTapped(_ topListTableViewCell: TopPostListTableViewCell) {
         guard let indexPath = tableView.indexPath(for: topListTableViewCell) else { return }
         viewModel.didSelectRowAt(indexPath)
     }
@@ -116,10 +117,14 @@ extension TopListViewController: TopListTableViewCellDelegate {
 
     // MARK: - Table view delegate
 
-extension TopListViewController: UITableViewDelegate {
+extension TopPostListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == viewModel.numberOfItems - 5, !viewModel.isLoadingList {
+        if
+            viewModel.paginationData.hasMoreItemsToLoad,
+            indexPath.row == viewModel.numberOfItems - 5,
+            !viewModel.paginationData.isLoadingList
+        {
             viewModel.fetchTopPosts()
         }
     }
@@ -128,27 +133,26 @@ extension TopListViewController: UITableViewDelegate {
 
     // MARK: - Table view data source
 
-extension TopListViewController: UITableViewDataSource {
+extension TopPostListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.numberOfItems
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case viewModel.numberOfItems - 1:
+        if viewModel.paginationData.hasMoreItemsToLoad, viewModel.numberOfItems - 1 == indexPath.row {
             let cell: LoadingTableViewCell = tableView.dequeueReusableCell(type: LoadingTableViewCell.self)
 
             return cell
-        default:
-            if viewModel.numberOfItems != 0 {
-                let cell: TopListTableViewCell = tableView.dequeueReusableCell(type: TopListTableViewCell.self)
+        }
 
-                cell.setup(item: viewModel.itemAt(indexPath))
-                cell.delegate = self
+        if viewModel.numberOfItems != 0 {
+            let cell: TopPostListTableViewCell = tableView.dequeueReusableCell(type: TopPostListTableViewCell.self)
 
-                return cell
-            }
+            cell.setup(item: viewModel.itemAt(indexPath))
+            cell.delegate = self
+
+            return cell
         }
 
         return UITableViewCell()
