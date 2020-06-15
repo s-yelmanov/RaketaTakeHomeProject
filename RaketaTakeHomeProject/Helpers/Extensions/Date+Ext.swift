@@ -10,7 +10,7 @@ import Foundation
 
 extension Date {
 
-    func timeAgoSinceDate() -> String {
+    var hoursAgoSinceDate: String {
         let calendar =  Calendar.current
         let fromDate = self
         let toDate = Date()

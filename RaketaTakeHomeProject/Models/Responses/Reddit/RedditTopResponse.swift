@@ -36,7 +36,7 @@ struct RedditTopItemResponse: Codable {
 
     var timeString: String {
         let date = Date(timeIntervalSince1970: TimeInterval(created))
-        return date.timeAgoSinceDate()
+        return date.hoursAgoSinceDate
     }
 
     var additionalImage: String? {

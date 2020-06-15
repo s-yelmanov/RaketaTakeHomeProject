@@ -31,7 +31,8 @@ extension UITableView {
     func register<Cell: UITableViewCell>(type: Cell.Type) {
         register(
             UINib(nibName: Cell.reuseIdentifier, bundle: nil),
-            forCellReuseIdentifier: Cell.reuseIdentifier)
+            forCellReuseIdentifier: Cell.reuseIdentifier
+        )
     }
 
 }
