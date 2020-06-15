@@ -110,7 +110,7 @@ extension TopPostListViewController: TopPostListTableViewCellDelegate {
 
     func topPostListTableViewCellImageTapped(_ topListTableViewCell: TopPostListTableViewCell) {
         guard let indexPath = tableView.indexPath(for: topListTableViewCell) else { return }
-        viewModel.didSelectRowAt(indexPath)
+        viewModel.didTapImageAt(indexPath)
     }
 
 }

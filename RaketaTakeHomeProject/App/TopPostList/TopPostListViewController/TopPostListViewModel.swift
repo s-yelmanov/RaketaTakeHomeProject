@@ -22,8 +22,6 @@ final class TopPostListViewModel {
     private let coordinator: TopPostListCoordinator
     private let service: RedditService
 
-    private lazy var validator = ImageTypeValidator()
-
     private var items = [RedditTopDataChildrenResponse]()
     private(set) var paginationData = PaginationData()
 
@@ -88,8 +86,8 @@ final class TopPostListViewModel {
         items[indexPath.row].data
     }
 
-    func didSelectRowAt(_ indexPath: IndexPath) {
-        guard let url = validator.validate(items[indexPath.row].data.url) else { return }
+    func didTapImageAt(_ indexPath: IndexPath) {
+        guard let url = items[indexPath.row].data.additionalImage else { return }
         showImageDetails(with: url)
     }
 

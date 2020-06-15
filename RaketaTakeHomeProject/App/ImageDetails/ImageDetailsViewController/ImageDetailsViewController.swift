@@ -65,7 +65,8 @@ final class ImageDetailsViewController: UIViewController {
     private func loadImage() {
         imageView.loadImage(fromURL: viewModel.imageURL) { [weak self] isSuccess in
             guard let self = self else { return }
-            self.activityIndicator.stopAnimating()
+
+            self.activityIndicator.stopAnimatingOnMainThread()
 
             if !isSuccess {
                 AlertService.showAlert(

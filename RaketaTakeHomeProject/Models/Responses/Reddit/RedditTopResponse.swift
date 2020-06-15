@@ -26,12 +26,12 @@ struct RedditTopItemResponse: Codable {
     let title: String
     let author: String
     let thumbnail: String?
-    let url: String?
+    let preview: RedditTopItemPreviewResponse?
     let created: Int
     let numberOfComments: Int
 
     private enum CodingKeys: String, CodingKey {
-        case title, author, thumbnail, url, created, numberOfComments = "num_comments"
+        case title, author, thumbnail, preview, created, numberOfComments = "num_comments"
     }
 
     var timeString: String {
@@ -39,15 +39,18 @@ struct RedditTopItemResponse: Codable {
         return date.timeAgoSinceDate()
     }
 
+    var additionalImage: String? {
+        preview?.images.first?.source.url?.htmlDecoded
+    }
+
 }
 
-struct RedditTopItemPreviewResponse:Codable {
+struct RedditTopItemPreviewResponse: Codable {
     let images: [RedditTopItemImageResponse]
 }
 
 struct RedditTopItemImageResponse: Codable {
     let source: RedditTopItemImageSourceResponse
-
 }
 
 struct RedditTopItemImageSourceResponse: Codable {

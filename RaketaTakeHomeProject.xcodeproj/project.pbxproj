@@ -12,6 +12,7 @@
 		FF1B2F802496403500B13453 /* UIRefreshControl+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B2F7F2496403500B13453 /* UIRefreshControl+Ext.swift */; };
 		FF1B2F852496481E00B13453 /* LightStatusBarNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B2F842496481E00B13453 /* LightStatusBarNavigationController.swift */; };
 		FF1B2F872496521800B13453 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1B2F862496521800B13453 /* UIViewController+Ext.swift */; };
+		FF247B1F2497B914004D73EB /* UIActivityIndicatorView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF247B1E2497B914004D73EB /* UIActivityIndicatorView+Ext.swift */; };
 		FF5CE5AB24967F64002BADCF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF5CE5AA24967F64002BADCF /* Colors.xcassets */; };
 		FF5CE5AF249689E0002BADCF /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5CE5AE249689E0002BADCF /* UIColor+Ext.swift */; };
 		FFAFC7D92494DB360098AEBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC7D82494DB360098AEBD /* AppDelegate.swift */; };
@@ -42,9 +43,7 @@
 		FFAFC82924954C780098AEBD /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC82824954C780098AEBD /* String+Ext.swift */; };
 		FFAFC82B24961A080098AEBD /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC82A24961A080098AEBD /* AlertService.swift */; };
 		FFAFC82D24961F7F0098AEBD /* ImageGalleryWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC82C24961F7F0098AEBD /* ImageGalleryWriter.swift */; };
-		FFAFC830249626CF0098AEBD /* ImageTypeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC82F249626CF0098AEBD /* ImageTypeValidator.swift */; };
 		FFAFC833249628D20098AEBD /* PhotoLibraryPermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC832249628D20098AEBD /* PhotoLibraryPermissionService.swift */; };
-		FFBCEA002496779300EA9032 /* ImageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBCE9FF2496779300EA9032 /* ImageType.swift */; };
 		FFBCEA02249677C100EA9032 /* PaginationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBCEA01249677C100EA9032 /* PaginationData.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +53,7 @@
 		FF1B2F7F2496403500B13453 /* UIRefreshControl+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Ext.swift"; sourceTree = "<group>"; };
 		FF1B2F842496481E00B13453 /* LightStatusBarNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightStatusBarNavigationController.swift; sourceTree = "<group>"; };
 		FF1B2F862496521800B13453 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		FF247B1E2497B914004D73EB /* UIActivityIndicatorView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+Ext.swift"; sourceTree = "<group>"; };
 		FF5CE5AA24967F64002BADCF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		FF5CE5AE249689E0002BADCF /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		FFAFC7D52494DB360098AEBD /* RaketaTakeHomeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaketaTakeHomeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,9 +86,7 @@
 		FFAFC82824954C780098AEBD /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		FFAFC82A24961A080098AEBD /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		FFAFC82C24961F7F0098AEBD /* ImageGalleryWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryWriter.swift; sourceTree = "<group>"; };
-		FFAFC82F249626CF0098AEBD /* ImageTypeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTypeValidator.swift; sourceTree = "<group>"; };
 		FFAFC832249628D20098AEBD /* PhotoLibraryPermissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryPermissionService.swift; sourceTree = "<group>"; };
-		FFBCE9FF2496779300EA9032 /* ImageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageType.swift; sourceTree = "<group>"; };
 		FFBCEA01249677C100EA9032 /* PaginationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,7 +160,6 @@
 				FFAFC7F02494DC3A0098AEBD /* Network */,
 				FFAFC8312496288F0098AEBD /* Service */,
 				FFAFC7EF2494DC340098AEBD /* App */,
-				FFAFC82E249626B80098AEBD /* Validators */,
 				FFBCE9FE2496777A00EA9032 /* Models */,
 				FFAFC7F12494DC400098AEBD /* Helpers */,
 				FFAFC7F22494DC5A0098AEBD /* Supporting files */,
@@ -254,6 +251,7 @@
 				FFAFC819249527890098AEBD /* UIView+Ext.swift */,
 				FFAFC816249521B50098AEBD /* UITableView+Ext.swift */,
 				FF1B2F7F2496403500B13453 /* UIRefreshControl+Ext.swift */,
+				FF247B1E2497B914004D73EB /* UIActivityIndicatorView+Ext.swift */,
 				FFAFC8142495219D0098AEBD /* Date+Ext.swift */,
 				FFAFC82824954C780098AEBD /* String+Ext.swift */,
 			);
@@ -296,14 +294,6 @@
 			path = ImageDetailsViewController;
 			sourceTree = "<group>";
 		};
-		FFAFC82E249626B80098AEBD /* Validators */ = {
-			isa = PBXGroup;
-			children = (
-				FFAFC82F249626CF0098AEBD /* ImageTypeValidator.swift */,
-			);
-			path = Validators;
-			sourceTree = "<group>";
-		};
 		FFAFC8312496288F0098AEBD /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,7 +309,6 @@
 			children = (
 				FFBCEA03249677E500EA9032 /* Responses */,
 				FFAFC80C24951AAA0098AEBD /* NetworkError.swift */,
-				FFBCE9FF2496779300EA9032 /* ImageType.swift */,
 				FFBCEA01249677C100EA9032 /* PaginationData.swift */,
 			);
 			path = Models;
@@ -433,7 +422,6 @@
 				FFAFC7FF2494DFCF0098AEBD /* AppCoordinator.swift in Sources */,
 				FFAFC7FA2494DF9B0098AEBD /* TopPostListViewModel.swift in Sources */,
 				FF1B2F852496481E00B13453 /* LightStatusBarNavigationController.swift in Sources */,
-				FFAFC830249626CF0098AEBD /* ImageTypeValidator.swift in Sources */,
 				FFAFC7F72494DEF50098AEBD /* TopPostListViewController.swift in Sources */,
 				FFAFC809249511710098AEBD /* Reusable.swift in Sources */,
 				FFAFC833249628D20098AEBD /* PhotoLibraryPermissionService.swift in Sources */,
@@ -447,10 +435,10 @@
 				FF1B2F7D249634C800B13453 /* LoadingTableViewCell.swift in Sources */,
 				FFBCEA02249677C100EA9032 /* PaginationData.swift in Sources */,
 				FFAFC7FC2494DFB00098AEBD /* TopPostListCoordinator.swift in Sources */,
+				FF247B1F2497B914004D73EB /* UIActivityIndicatorView+Ext.swift in Sources */,
 				FFAFC823249541ED0098AEBD /* ImageDetailsViewModel.swift in Sources */,
 				FFAFC825249541FE0098AEBD /* ImageDetailsViewController.swift in Sources */,
 				FFAFC82924954C780098AEBD /* String+Ext.swift in Sources */,
-				FFBCEA002496779300EA9032 /* ImageType.swift in Sources */,
 				FFAFC80D24951AAA0098AEBD /* NetworkError.swift in Sources */,
 				FFAFC817249521B50098AEBD /* UITableView+Ext.swift in Sources */,
 				FFAFC820249541A70098AEBD /* ImageDetailsCoordinator.swift in Sources */,
