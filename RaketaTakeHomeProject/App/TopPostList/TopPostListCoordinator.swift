@@ -10,12 +10,18 @@ import UIKit
 
 final class TopPostListCoordinator: Coordinator {
 
+    // MARK: - Properties
+
     private let navigationController: UINavigationController
+
+    // MARK: - Life cycle
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
 
+    // MARK: - Methods
+    
     func start() {
         let topPostListViewModel = TopPostListViewModel(coordinator: self, service: RedditService())
         let topPostListViewController = UIStoryboard.instantiateTopListViewController(viewModel: topPostListViewModel)

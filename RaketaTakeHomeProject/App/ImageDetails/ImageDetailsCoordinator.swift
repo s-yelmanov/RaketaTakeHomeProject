@@ -10,13 +10,19 @@ import UIKit
 
 final class ImageDetailsCoordinator: Coordinator {
 
+    // MARK: - Private properties
+
     private let navigationController: UINavigationController
     private let imageURL: String
+
+    // MARK: - Life cycle
 
     init(navigationController: UINavigationController, imageURL: String) {
         self.navigationController = navigationController
         self.imageURL = imageURL
     }
+
+    // MARK: - Methods
 
     func start() {
         let imageDetailsViewModel = ImageDetailsViewModel(coordinator: self, imageURL: imageURL)
@@ -30,4 +36,5 @@ final class ImageDetailsCoordinator: Coordinator {
 
         self.navigationController.present(navigationController, animated: true)
     }
+    
 }

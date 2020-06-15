@@ -64,18 +64,14 @@ final class TopPostListViewModel {
                 self.paginationData.hasMoreItemsToLoad = !response.data.children.isEmpty
                 self.paginationData.lastPostID = response.data.after
                 self.items.append(contentsOf: response.data.children)
-                
-                DispatchQueue.main.async {
-                    self.delegate?.topPostListViewModelShouldReloadData(self)
-                }
+
+                self.delegate?.topPostListViewModelShouldReloadData(self)
             case .failure(let error):
                 self.paginationData.hasMoreItemsToLoad = false
-                DispatchQueue.main.async {
-                    self.delegate?.topPostListViewModel(
-                        self,
-                        failedToLoadDataWithMessage: error.localizedDescription
-                    )
-                }
+                self.delegate?.topPostListViewModel(
+                    self,
+                    failedToLoadDataWithMessage: error.localizedDescription
+                )
             }
         }
     }

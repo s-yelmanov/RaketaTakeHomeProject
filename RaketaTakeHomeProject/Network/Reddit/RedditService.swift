@@ -10,10 +10,16 @@ import Foundation
 
 final class RedditService {
 
+    // MARK: - Private properties
+
     private let baseUrlString = "https://www.reddit.com/top.json"
+
+    // MARK: - Life cycle
 
     init() {}
 
+    // MARK: - Methods
+    
     private func getRequest(lastPostID: String?) -> URLRequest? {
         guard let url = URL(string: baseUrlString + "?after=\(lastPostID ?? "")") else {
             return nil

@@ -10,14 +10,6 @@ import Foundation
 
 extension String {
 
-//    var isImageType: Bool {
-//        guard let url = URL(string: self) else { return false }
-//        
-//        let pathExtension = url.pathExtension
-//
-//        return ImageType(rawValue: pathExtension) != nil
-//    }
-
     var htmlDecoded: String {
         let decoded = try? NSAttributedString(data: Data(utf8), options: [
             .documentType: NSAttributedString.DocumentType.html,
